@@ -1,0 +1,34 @@
+1. Descreva outros protocolos da camada de transporte e os compare com o TCP.
+R: Enquanto o protocolo TCP é utilizado para transmissões orientadas a conexão
+   (necessária utilização de acknowledgment), o protocolo UDP (User Datagram
+   Protocol) consiste em um serviço sem conexão, sem a necessidade de verifi-
+   cação por parte do cliente se seu pacote foi recebido pelo servidor. Com
+   isso, seus serviços de broadcast/multicast são mais rápidos, mas menos se-
+   guros que o do TCP. Outro protocolo consiste no Protocolo de Controle de
+   Congestionamento de Datagramas (DCCP), o qual permite o acesso a mecanismos
+   de controle de congestionamento de pacotes sem a necessidade de implementa-
+   ção na camada de aplicação mas, comparado ao TCP, não permite uma entrega
+   confiável e verificada. Apesar disso, ele contém informações de sinais e
+   informações de tráfego, permitindo informar ao cliente se os pacotes foram
+   recebidos. Outro pacote consiste no Stream Control Transmission Protocol
+   (SCTP), o qual, de forma confiável, trabalha com serviço de pacotes sem
+   conexão, transferindo datagramas sem erros e duplicações, pois utiliza 
+   ACKs, checksum, números sequenciais e retransmissão seletiva para verifica-
+   ção e correção de dados perdidos.
+
+2. Descreva protocolos da camada de aplicação que utilizem o TCP como padrão.
+R: Uma sessão é definida como uma sequência de interações entre cliente e
+   servidor iniciada por um único cliente durante o tempo de alguma
+   atividade/trabalho. Na camada deaplicação, essa sessão determina sequência
+   de solicitações e respostas determinadas após o estabelecimento de conexão
+   entre o cliente e o servidor. Por meio da sessão TCP/IP (conexão TCP aberta),
+   o cliente pode-se utilizar de alguns serviços na camada de aplicação além do
+   HTTP. Um deles consiste no Protocolo de Transferência de Correio Simples
+   (SMTP), o qual estabelece-se em uma conexão para envio de e-mails pela
+   internet, especificando destinatários de mensagens para que as mensagens
+   designadas sejam transferidas, consultando sempre que necessário o protoco-
+   lo DNS para pesquisa e verificação do registro de troca do domínio a ser
+   entregue. Enquanto o protocolo SMTP é utilizado para envio de correio ele-
+   trônico, os Protocolos de acesso a mensagem da internet (IMAP) e Protocolo
+   de correios (POP3) são utilizados para obtenção de mensagens por clientes
+   de e-mail, sempre utilizando uma conexão TCP/IP.
